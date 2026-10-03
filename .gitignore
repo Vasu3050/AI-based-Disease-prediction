@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Environment files — NEVER commit real secrets
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Test / coverage
+coverage/
+.nyc_output/
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local runtime data (demo MongoDB, uploads, exports)
+.local/
+data/
+uploads/
+
+# ML raw datasets (downloaded locally; never redistributed via git)
+ml/datasets/raw/
+!ml/datasets/raw/.gitkeep
+
+# Misc
+.playwright/
+.turbo/

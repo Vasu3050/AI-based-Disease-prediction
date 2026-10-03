@@ -1,0 +1,2 @@
+# Keep the models directory in git even before artifacts exist.
+# Trained artifacts (*.model.json) ARE committed — they are required at runtime.

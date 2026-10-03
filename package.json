@@ -1,0 +1,35 @@
+{
+  "name": "medipredict-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MediPredict AI — AI-assisted blood-test analysis and disease-risk prediction platform (educational decision-support tool; not a medical device).",
+  "license": "MIT",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev:server": "npm run dev -w server",
+    "dev:client": "npm run dev -w client",
+    "build": "npm run build -w server && npm run build -w client",
+    "start": "node server/dist/index.js",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w client",
+    "lint": "npm run lint -w server && npm run lint -w client",
+    "test": "npm run test -w server && npm run test -w client",
+    "test:server": "npm run test -w server",
+    "test:client": "npm run test -w client",
+    "dataset:fetch": "node ml/datasets/fetch-datasets.mjs",
+    "train:models": "node ml/training/train-all.mjs",
+    "demo:seed": "tsx scripts/seed-demo.ts",
+    "smoke": "node scripts/smoke.mjs",
+    "format": "prettier --write \"{server,client}/src/**/*.{ts,tsx,css}\" \"ml/**/*.mjs\" \"scripts/**/*.mjs\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "prettier": "^3.4.2"
+  }
+}

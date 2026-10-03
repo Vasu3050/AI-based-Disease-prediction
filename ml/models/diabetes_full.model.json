@@ -1,0 +1,62 @@
+{
+  "key": "diabetes_full",
+  "name": "diabetes-full-lr",
+  "targetId": "diabetes_risk",
+  "title": "Diabetes-related risk score",
+  "description": "Logistic regression on glucose, BMI, age and diastolic blood pressure (PIMA-trained).",
+  "version": "1.0.0",
+  "trainedAt": "2026-10-03T17:11:07.268Z",
+  "features": [
+    "glucose",
+    "bmi",
+    "age",
+    "bp"
+  ],
+  "scaler": {
+    "mean": [
+      121.500864,
+      32.484629,
+      33.212435,
+      72.651123
+    ],
+    "std": [
+      30.794068,
+      6.969801,
+      11.644747,
+      12.072268
+    ]
+  },
+  "coefficients": [
+    1.101301,
+    0.603467,
+    0.393326,
+    -0.13101
+  ],
+  "intercept": -0.876034,
+  "decisionThreshold": 0.5,
+  "metrics": {
+    "rocAuc": 0.825684,
+    "prAuc": 0.732816,
+    "accuracy": 0.772414,
+    "precision": 0.742857,
+    "recall": 0.52,
+    "f1": 0.611765,
+    "brier": 0.160554,
+    "nTrain": 579,
+    "nTest": 145,
+    "prevalence": 0.344828,
+    "datasetName": "PIMA Indians Diabetes Database"
+  },
+  "dataset": {
+    "name": "PIMA Indians Diabetes Database",
+    "source": "Originally from the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK); distributed via widely mirrored public copies (jbrownlee/Datasets, plotly/datasets).",
+    "url": "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv",
+    "license": "Public research dataset, commonly distributed as CC0 / public domain via mirrors."
+  },
+  "notes": "Trained on the PIMA dataset. IMPORTANT: the dataset glucose field is a 2-hour oral glucose tolerance test value, while the application typically provides fasting glucose — treat outputs as rough educational estimates, not clinical probabilities. Dataset population: Pima women aged 21+ (not representative). See docs/ML.md for full limitations.",
+  "cv": {
+    "folds": 5,
+    "aucMean": 0.825093,
+    "aucStd": 0.018829
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "key": "kidney_full",
+  "name": "kidney-full-lr",
+  "targetId": "kidney_risk",
+  "title": "Kidney-related risk score",
+  "description": "Logistic regression on age, hemoglobin, BUN and creatinine (UCI CKD-trained).",
+  "version": "1.0.0",
+  "trainedAt": "2026-10-03T17:11:07.307Z",
+  "features": [
+    "age",
+    "hemoglobin",
+    "bun",
+    "creatinine"
+  ],
+  "scaler": {
+    "mean": [
+      51.279693,
+      12.527969,
+      55.117241,
+      2.793678
+    ],
+    "std": [
+      17.225717,
+      2.868171,
+      46.78312,
+      5.493605
+    ]
+  },
+  "coefficients": [
+    -0.395314,
+    -4.170454,
+    -1.995485,
+    21.165217
+  ],
+  "intercept": 6.727875,
+  "decisionThreshold": 0.5,
+  "metrics": {
+    "rocAuc": 0.986355,
+    "prAuc": 0.991523,
+    "accuracy": 0.953846,
+    "precision": 0.972973,
+    "recall": 0.947368,
+    "f1": 0.96,
+    "brier": 0.039087,
+    "nTrain": 261,
+    "nTest": 65,
+    "prevalence": 0.584615,
+    "datasetName": "Chronic Kidney Disease dataset"
+  },
+  "dataset": {
+    "name": "Chronic Kidney Disease dataset",
+    "source": "UCI Machine Learning Repository (dataset 336).",
+    "url": "https://archive.ics.uci.edu/dataset/336/chronic+kidney+disease",
+    "license": "CC BY 4.0 (UCI Machine Learning Repository)."
+  },
+  "notes": "Trained on the UCI Chronic Kidney Disease dataset. The dataset \"blood urea\" field is mapped to BUN — a small semantic caveat. Many missing values; only complete rows were used. Estimates are educational and NOT clinical probabilities. See docs/ML.md.",
+  "cv": {
+    "folds": 5,
+    "aucMean": 0.984373,
+    "aucStd": 0.011003
+  }
+}

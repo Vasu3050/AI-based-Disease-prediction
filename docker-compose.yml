@@ -1,0 +1,34 @@
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+    # For local-only access the port is not published; the app reaches it via
+    # the compose network. Uncomment to inspect with a local client:
+    # ports:
+    #   - "27017:27017"
+
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      MONGODB_URI: mongodb://mongo:27017/medipredict
+      # REQUIRED: set a real secret (>= 32 chars) before use.
+      JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET in the environment or a .env file}
+      CLIENT_URL: ${CLIENT_URL:-http://localhost:5000}
+      # Optional LLM layer (see docs/ENVIRONMENT.md):
+      LLM_PROVIDER: ${LLM_PROVIDER:-none}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
+      LLM_MODEL: ${LLM_MODEL:-}
+      LLM_TIMEOUT_MS: ${LLM_TIMEOUT_MS:-20000}
+    ports:
+      - "5000:5000"
+
+volumes:
+  mongo-data:

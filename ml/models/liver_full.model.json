@@ -1,0 +1,74 @@
+{
+  "key": "liver_full",
+  "name": "liver-lr",
+  "targetId": "liver_risk",
+  "title": "Liver-related abnormality risk score",
+  "description": "Logistic regression on bilirubin, ALP, ALT, AST and albumin (ILPD-trained). Estimates probability of the dataset's liver-patient label — not a specific disease diagnosis.",
+  "version": "1.0.0",
+  "trainedAt": "2026-10-03T17:11:07.300Z",
+  "features": [
+    "age",
+    "sex_female",
+    "total_bilirubin",
+    "alp",
+    "alt",
+    "ast",
+    "albumin"
+  ],
+  "scaler": {
+    "mean": [
+      44.522484,
+      0.24197,
+      3.269165,
+      293.098501,
+      85.723769,
+      117.186296,
+      3.172377
+    ],
+    "std": [
+      15.931891,
+      0.428736,
+      6.293313,
+      249.783466,
+      196.094022,
+      315.487112,
+      0.800635
+    ]
+  },
+  "coefficients": [
+    0.265709,
+    -0.010862,
+    1.684357,
+    0.379421,
+    1.366098,
+    1.992406,
+    -0.148566
+  ],
+  "intercept": 2.046513,
+  "decisionThreshold": 0.5,
+  "metrics": {
+    "rocAuc": 0.751369,
+    "prAuc": 0.885025,
+    "accuracy": 0.75,
+    "precision": 0.77,
+    "recall": 0.927711,
+    "f1": 0.84153,
+    "brier": 0.174792,
+    "nTrain": 467,
+    "nTest": 116,
+    "prevalence": 0.715517,
+    "datasetName": "Indian Liver Patient Dataset (ILPD)"
+  },
+  "dataset": {
+    "name": "Indian Liver Patient Dataset (ILPD)",
+    "source": "UCI Machine Learning Repository (dataset 225).",
+    "url": "https://archive.ics.uci.edu/dataset/225/ilpd+indian+liver+patient+dataset",
+    "license": "CC BY 4.0 (UCI Machine Learning Repository)."
+  },
+  "notes": "Trained on ILPD. The dataset label marks \"liver patient\" status, not a specific disease. Small dataset with extreme outliers; do not present outputs as diagnoses. See docs/ML.md.",
+  "cv": {
+    "folds": 5,
+    "aucMean": 0.739407,
+    "aucStd": 0.082453
+  }
+}

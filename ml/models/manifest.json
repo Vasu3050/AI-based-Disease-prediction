@@ -1,0 +1,156 @@
+{
+  "generatedAt": "2026-10-03T17:11:07.311Z",
+  "note": "Metrics are from held-out test splits / CV of the training pipeline — NOT real-world clinical performance. See docs/ML.md.",
+  "models": [
+    {
+      "key": "diabetes_full",
+      "targetId": "diabetes_risk",
+      "version": "1.0.0",
+      "trainedAt": "2026-10-03T17:11:07.268Z",
+      "features": [
+        "glucose",
+        "bmi",
+        "age",
+        "bp"
+      ],
+      "metrics": {
+        "rocAuc": 0.825684,
+        "prAuc": 0.732816,
+        "accuracy": 0.772414,
+        "precision": 0.742857,
+        "recall": 0.52,
+        "f1": 0.611765,
+        "brier": 0.160554,
+        "nTrain": 579,
+        "nTest": 145,
+        "prevalence": 0.344828,
+        "datasetName": "PIMA Indians Diabetes Database"
+      },
+      "cv": {
+        "folds": 5,
+        "aucMean": 0.825093,
+        "aucStd": 0.018829
+      }
+    },
+    {
+      "key": "diabetes_reduced",
+      "targetId": "diabetes_risk",
+      "version": "1.0.0",
+      "trainedAt": "2026-10-03T17:11:07.283Z",
+      "features": [
+        "glucose",
+        "age"
+      ],
+      "metrics": {
+        "rocAuc": 0.857061,
+        "prAuc": 0.787834,
+        "accuracy": 0.776316,
+        "precision": 0.827586,
+        "recall": 0.45283,
+        "f1": 0.585366,
+        "brier": 0.148273,
+        "nTrain": 611,
+        "nTest": 152,
+        "prevalence": 0.348684,
+        "datasetName": "PIMA Indians Diabetes Database"
+      },
+      "cv": {
+        "folds": 5,
+        "aucMean": 0.792928,
+        "aucStd": 0.052753
+      }
+    },
+    {
+      "key": "liver_full",
+      "targetId": "liver_risk",
+      "version": "1.0.0",
+      "trainedAt": "2026-10-03T17:11:07.300Z",
+      "features": [
+        "age",
+        "sex_female",
+        "total_bilirubin",
+        "alp",
+        "alt",
+        "ast",
+        "albumin"
+      ],
+      "metrics": {
+        "rocAuc": 0.751369,
+        "prAuc": 0.885025,
+        "accuracy": 0.75,
+        "precision": 0.77,
+        "recall": 0.927711,
+        "f1": 0.84153,
+        "brier": 0.174792,
+        "nTrain": 467,
+        "nTest": 116,
+        "prevalence": 0.715517,
+        "datasetName": "Indian Liver Patient Dataset (ILPD)"
+      },
+      "cv": {
+        "folds": 5,
+        "aucMean": 0.739407,
+        "aucStd": 0.082453
+      }
+    },
+    {
+      "key": "kidney_full",
+      "targetId": "kidney_risk",
+      "version": "1.0.0",
+      "trainedAt": "2026-10-03T17:11:07.307Z",
+      "features": [
+        "age",
+        "hemoglobin",
+        "bun",
+        "creatinine"
+      ],
+      "metrics": {
+        "rocAuc": 0.986355,
+        "prAuc": 0.991523,
+        "accuracy": 0.953846,
+        "precision": 0.972973,
+        "recall": 0.947368,
+        "f1": 0.96,
+        "brier": 0.039087,
+        "nTrain": 261,
+        "nTest": 65,
+        "prevalence": 0.584615,
+        "datasetName": "Chronic Kidney Disease dataset"
+      },
+      "cv": {
+        "folds": 5,
+        "aucMean": 0.984373,
+        "aucStd": 0.011003
+      }
+    },
+    {
+      "key": "kidney_reduced",
+      "targetId": "kidney_risk",
+      "version": "1.0.0",
+      "trainedAt": "2026-10-03T17:11:07.309Z",
+      "features": [
+        "age",
+        "hemoglobin",
+        "creatinine"
+      ],
+      "metrics": {
+        "rocAuc": 0.978558,
+        "prAuc": 0.988169,
+        "accuracy": 0.953846,
+        "precision": 0.972973,
+        "recall": 0.947368,
+        "f1": 0.96,
+        "brier": 0.046735,
+        "nTrain": 264,
+        "nTest": 65,
+        "prevalence": 0.584615,
+        "datasetName": "Chronic Kidney Disease dataset"
+      },
+      "cv": {
+        "folds": 5,
+        "aucMean": 0.982141,
+        "aucStd": 0.017219
+      }
+    }
+  ]
+}
